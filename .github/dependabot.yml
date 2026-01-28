@@ -7,7 +7,9 @@ updates:
     schedule:
       interval: "daily"            # check for updates daily
       time: "04:00"                # optional: check at 4 AM UTC
-      day: "monday"                # optional: check every Monday (if weekly)
+      day: "monday"  
+    target-branch: "develop-check"
+    # optional: check every Monday (if weekly)
     commit-message:
       prefix: "deps"               # PR commit message prefix
       include: "scope"             # include dependency name in commit
