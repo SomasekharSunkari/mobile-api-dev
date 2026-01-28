@@ -1,0 +1,73 @@
+@include('layouts/email_header')
+
+<p>Hi {{username}},</p>
+
+@if(action == 'freeze')
+<p>Your OneDosh virtual card is currently frozen.</p>
+<p>As a result, all transactions are temporarily disabled. To resume using your card, please unfreeze it from the OneDosh app.</p>
+<p>If you need any assistance, feel free to reach out.</p>
+@endif
+
+@if(action == 'unfreeze')
+<p>Your OneDosh virtual card is active again and ready for use.</p>
+<p>Spend securely, we're right here with you.</p>
+@endif
+
+@if(action == 'reissue')
+<p>Your OneDosh card has been successfully reissued.</p>
+<p>Your previous card has been canceled and a new card has been created. Your balance has been automatically transferred to your new card, and you can start using it immediately.</p>
+<p>If you have any questions or need assistance, please don't hesitate to reach out to our support team.</p>
+@endif
+
+@if(action != 'freeze' && action != 'unfreeze' && action != 'reissue')
+<p>{{actionText}}</p>
+@endif
+
+
+<div style="background-color: #f9fafb; border-radius: 8px; padding: 20px; margin: 24px 0;">
+  <table style="width: 100%; font-size: 14px; color: #4b5563;">
+    @if(cardId)
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Card ID</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">{{cardId}}</td>
+    </tr>
+    @endif
+    @if(action == 'limit_updated' && formattedLimit)
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">New Spending Limit</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">${{formattedLimit}}</td>
+    </tr>
+    @endif
+    @if(action == 'limit_updated' && limitFrequency)
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Limit Frequency</td>
+      <td style="padding: 8px 0; text-align: right;">{{limitFrequency}}</td>
+    </tr>
+    @endif
+    <tr>
+      <td style="padding: 8px 0; font-weight: 500;">Date & time</td>
+      <td style="padding: 8px 0; text-align: right;">{{transactionDate}}</td>
+    </tr>
+  </table>
+</div>
+
+@if(action == 'limit_updated')
+<p>Your card spending limit has been updated. You can view your updated limit in your account settings.</p>
+@endif
+
+@if(action == 'freeze')
+<p style="font-size: 12px; color: #6b7280; margin-top: 16px;">
+  If you did not make this change, please contact us immediately at <a href="mailto:support@onedosh.com" style="color: #3461FF;">support@onedosh.com</a>.
+</p>
+@endif
+
+@if(action == 'unfreeze')
+<p>Thank you for choosing Onedosh!</p>
+@else
+<p>Thanks for choosing OneDosh!</p>
+@endif
+
+<p>Best regards,<br>
+OneDosh Support Team</p>
+
+@include('layouts/email_footer')

@@ -1,0 +1,18 @@
+@include('layouts/email_header')
+
+<h1>Payment Successful</h1>
+
+<p>Hi {{username}},</p>
+
+<p>Your payment of ${{formattedAmount}} at {{merchantName}} was successful.<br>
+Remaining balance: ${{formattedNewBalance}}.</p>
+
+<p>Track activity anytime in your app.</p>
+
+<p>Thank you for choosing OneDosh!</p>
+
+<p>Best regards,<br>
+The OneDosh Team</p>
+
+@include('layouts/email_footer_zerohash')
+

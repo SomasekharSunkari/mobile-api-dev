@@ -1,0 +1,19 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "setupFilesAfterEnv": ["<rootDir>/setup-e2e.ts"],
+  "moduleNameMapper": {
+    "^superjson$": "<rootDir>/mocks/superjson.js",
+    "^src/(.*)$": "<rootDir>/../src/$1"
+  },
+  "transformIgnorePatterns": ["node_modules/(?!(superjson|jose|jwt-decode|js-sha256|secure-compare)/)"],
+  "silent": true,
+  "verbose": false,
+  "forceExit": true,
+  "detectOpenHandles": true
+}

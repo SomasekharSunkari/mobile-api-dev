@@ -1,0 +1,45 @@
+import { JSONSchema } from 'objection';
+
+export const CardValidationSchema: JSONSchema = {
+  type: 'object',
+  title: 'Card Validation Schema',
+  required: ['user_id', 'card_user_id', 'status'],
+  properties: {
+    user_id: { type: 'string' },
+    card_user_id: { type: 'string' },
+    provider_ref: { type: ['string', 'null'] },
+    status: {
+      type: 'string',
+      enum: ['pending', 'active', 'inactive', 'suspended', 'blocked', 'canceled', 'expired'],
+      default: 'pending',
+    },
+    card_type: {
+      type: ['string', 'null'],
+      enum: ['physical', 'virtual'],
+    },
+    limit: { type: ['number', 'null'], minimum: 0 },
+    limit_frequency: { type: ['string', 'null'] },
+    display_name: { type: ['string', 'null'] },
+    provider_product_id: { type: ['string', 'null'] },
+    provider_product_ref: { type: ['string', 'null'] },
+    art_id: { type: ['string', 'null'] },
+    last_four_digits: { type: ['string', 'null'], minLength: 0, maxLength: 4 },
+    address_line_1: { type: ['string', 'null'] },
+    address_line_2: { type: ['string', 'null'] },
+    city: { type: ['string', 'null'] },
+    region: { type: ['string', 'null'] },
+    postal_code: { type: ['string', 'null'] },
+    country_id: { type: ['string', 'null'] },
+    is_freezed: { type: 'boolean', default: false },
+    expiration_month: { type: ['string', 'null'] },
+    expiration_year: { type: ['string', 'null'] },
+    balance: { type: ['number', 'null'] },
+    insufficient_funds_decline_count: { type: ['integer', 'null'], minimum: 0, default: 0 },
+    issuance_fee_status: {
+      type: 'string',
+      enum: ['pending', 'completed', 'failed'],
+      default: 'pending',
+    },
+    token_wallets: { type: ['string', 'null'] },
+  },
+};

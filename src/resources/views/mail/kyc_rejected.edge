@@ -1,0 +1,34 @@
+@include('layouts/email_header')
+
+<h1>{{subjectName}}</h1>
+
+<p>Hi {{username}},</p>
+
+<p>We regret to inform you that your KYC (Know Your Customer) verification has been rejected.</p>
+
+<p>Our compliance team has reviewed your submitted documents and information, and unfortunately, we are unable to proceed with the verification at this time.</p>
+
+<p>Common reasons for KYC rejection include:</p>
+<ul>
+  @each(issue in issues)
+    <li>{{issue}}</li>
+  @endeach
+</ul>
+
+@if(failureCorrections.length > 0)
+  <p>Suggested next steps to address these issues:</p>
+  <ul>
+    @each(failureCorrection in failureCorrections)
+      <li>{{failureCorrection}}</li>
+    @endeach
+  </ul>
+@endif
+
+<p>If you need assistance or have questions about the rejection, please contact our support team. We're here to help you complete the verification process successfully.</p>
+
+<p>Thank you for your understanding.</p>
+
+<p>Best regards,<br>
+  The OneDosh Team</p>
+
+@include('layouts/email_footer')

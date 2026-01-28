@@ -1,0 +1,21 @@
+@include('layouts/email_header')
+
+<p>Hello {{ firstName }},</p>
+
+<p>We wanted to let you know that your {{ institutionName }} account ending in <strong>{{ lastFourDigits }}</strong> has been unlinked from your OneDosh account.</p>
+
+<p><strong>What this means:</strong></p>
+
+<ul>
+    <li>You will no longer be able to use this account for deposits or withdrawals.</li>
+    <li>If you'd like to link it again, you can do so anytime from the Wallet section in the app.</li>
+</ul>
+
+<p>If you didn't request this change, please contact our support team immediately at {{ supportEmail }}.</p>
+
+<p>Thanks for trusting OneDosh to power your transfers securely.</p>
+
+<p>Warm regards,<br>
+The OneDosh Team</p>
+
+@include('layouts/email_footer')

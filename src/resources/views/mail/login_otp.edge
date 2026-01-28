@@ -1,0 +1,24 @@
+@include('layouts/email_header')
+
+<h1>Login Verification Code</h1>
+
+<p>Hi {{name}},</p>
+
+<p>Please use the verification code below to complete your login:</p>
+
+<div style="text-align: center; margin: 30px 0;">
+  <div style="background-color: #f8f9fa; border: 2px solid #3461FF; border-radius: 8px; padding: 20px; display: inline-block;">
+    <div style="font-size: 32px; font-weight: bold; color: #3461FF; letter-spacing: 4px; font-family: 'Courier New', monospace;">
+      {{code}}
+    </div>
+  </div>
+</div>
+
+<p style="text-align: center; color: #dc3545; font-weight: bold;">This code expires in {{expirationMinutes}} minutes.</p>
+
+<p>If you didn't request this code, please ignore this email or contact our support team if you have concerns.</p>
+
+<p>Best regards,<br>
+The OneDosh Team</p>
+
+@include('layouts/email_footer')

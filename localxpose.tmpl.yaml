@@ -1,0 +1,5 @@
+api:
+  type: http
+  region: us
+  subdomain: ${LOCALXPOSE_SUBDOMAIN}
+  to: localhost:${APP_PORT}

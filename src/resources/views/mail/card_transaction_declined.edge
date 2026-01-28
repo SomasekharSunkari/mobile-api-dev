@@ -1,0 +1,17 @@
+@include('layouts/email_header')
+
+<h1>Payment Declined</h1>
+
+<p>Hi {{username}},</p>
+
+<p>Your transaction of ${{formattedAmount}} at {{merchantName}} couldn't be processed due to low balance.</p>
+
+<p>Top up anytime in your app to continue spending.</p>
+
+<p>Thank you for choosing Onedosh!</p>
+
+<p>Best regards,<br>
+OneDosh Team</p>
+
+@include('layouts/email_footer_zerohash')
+

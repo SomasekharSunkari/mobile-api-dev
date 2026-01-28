@@ -1,0 +1,22 @@
+@include('layouts/email_header')
+
+<h1>Card Funding Successful</h1>
+
+<p>Hi {{username}},</p>
+
+<p>You've successfully added ${{formattedAmount}} to your OneDosh Card.<br>
+Your new balance is ${{formattedNewBalance}}.</p>
+
+@if(hasPositiveBalance)
+<p>You're all set to spend with confidence.</p>
+@else
+<p>Your card balance is still negative. Please add more funds to your card to continue spending.</p>
+@endif
+
+<p>Thanks for choosing OneDosh!</p>
+
+<p>Best regards,<br>
+OneDosh Team</p>
+
+@include('layouts/email_footer_zerohash')
+

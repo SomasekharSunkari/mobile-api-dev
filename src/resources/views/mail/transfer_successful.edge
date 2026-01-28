@@ -1,0 +1,89 @@
+@include('layouts/email_header')
+
+<h1>Transfer Successful</h1>
+
+<p>Hi {{username}},</p>
+
+<p>Your transfer of <strong>${{formattedAmount}} USDC</strong> {{transferFromTo}} has been successfully completed.</p>
+
+<p>You're all set. You can view your updated balance in your OneDosh account.</p>
+
+<div style="background-color: #f9fafb; border-radius: 8px; padding: 20px; margin: 24px 0;">
+  <table style="width: 100%; font-size: 14px; color: #4b5563;">
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Transaction ID</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">{{transactionId}}</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Date & time</td>
+      <td style="padding: 8px 0; text-align: right;">{{transactionDate}}</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Description</td>
+      <td style="padding: 8px 0; text-align: right;">{{description}}</td>
+    </tr>
+    @if(accountId)
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Account ID:</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">{{accountId}}</td>
+    </tr>
+    @endif
+    @if(orderNumber)
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Order Number:</td>
+      <td style="padding: 8px 0; text-align: right;">{{orderNumber}}</td>
+    </tr>
+    @endif
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Local Currency Amount</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">${{formattedAmount}} USDC</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Fees</td>
+      <td style="padding: 8px 0; text-align: right;">{{fees}}</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Amount Recipient will receive</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">${{amountRecipientWillReceive}} USDC</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Exchange Rate</td>
+      <td style="padding: 8px 0; text-align: right;">{{exchangeRate}}</td>
+    </tr>
+    @if(senderName)
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Sender Name</td>
+      <td style="padding: 8px 0; text-align: right;">{{senderName}}</td>
+    </tr>
+    @endif
+    @if(recipientName)
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Recipient</td>
+      <td style="padding: 8px 0; text-align: right;">{{recipientName}}</td>
+    </tr>
+    @endif
+    @if(recipientLocation)
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Recipient Location</td>
+      <td style="padding: 8px 0; text-align: right;">{{recipientLocation}}</td>
+    </tr>
+    @endif
+    <tr>
+      <td style="padding: 8px 0; font-weight: 500;">Date funds will be available</td>
+      <td style="padding: 8px 0; text-align: right;">{{dateFundsAvailable}}</td>
+    </tr>
+  </table>
+</div>
+
+@include('layouts/zerohash_legal_terms')
+
+<p style="font-size: 12px; color: #6b7280; margin-top: 16px;">
+  If you did not initiate this transfer you can contact us immediately at <a href="mailto:support@onedosh.com" style="color: #3461FF;">support@onedosh.com</a>.
+</p>
+
+<p>Thanks for choosing OneDosh!</p>
+
+<p>Best regards,<br>
+The OneDosh Team</p>
+
+@include('layouts/email_footer')

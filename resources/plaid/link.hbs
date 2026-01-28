@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Plaid Link Token Test</title>
+  <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+</head>
+
+<body>
+  <button id="link-button">Link your bank account</button>
+  <script>
+    const linkToken = "{{linkToken}}"; // Replace with your actual link_token
+    const accessToken = "{{accessToken}}"; // Replace with actual token from your backend
+    const handler = Plaid.create({
+      token: linkToken,
+      onSuccess: function (public_token, metadata) {
+        console.log('Success!');
+        console.log('Public Token:', public_token);
+        console.log('Metadata:', metadata);
+        // Send the public_token to your backend
+        fetch('http://localhost:9999/external-accounts/plaid/exchange', {
+           // fetch('https://dev.onedosh.com/external-accounts/plaid/exchange', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`
+          },
+          body: JSON.stringify({
+            public_token: public_token,
+            metadata: metadata
+          })
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log('Backend response:', data);
+            alert('Exchange successful! Check console.');
+          })
+          .catch(err => {
+            console.error('Exchange failed:', err);
+            alert('Exchange failed. Check console.');
+          });
+      },
+      onExit: function (err, metadata) {
+        console.error('Exited:', err, metadata);
+        alert('Exited. Check console.');
+      }
+    });
+    document.getElementById('link-button').onclick = function () {
+      handler.open();
+    };
+  </script>
+</body>
+
+</html>

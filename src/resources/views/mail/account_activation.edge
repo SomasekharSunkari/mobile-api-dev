@@ -1,0 +1,51 @@
+@include('layouts/email_header')
+
+<h1>Account Activation Successful</h1>
+
+<p>Hi {{username}},</p>
+
+<p>Your OneDosh account has been successfully activated. You can now access your account and explore our cross-border payment platform powered by stablecoin.</p>
+
+<div style="background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; padding: 15px; margin: 20px 0;">
+  <h3 style="color: #155724; margin-top: 0;">🎉 Welcome Back!</h3>
+  <p style="color: #155724; margin-bottom: 0;">
+    Your account is now active. Please note: <strong>You will be able to perform transactions 24 hours after activation.</strong> This is a security measure to ensure the safety of your account.
+  </p>
+</div>
+
+<h2>Account Details:</h2>
+<ul style="line-height: 1.6;">
+  <li><strong>Email:</strong> {{userEmail}}</li>
+  <li><strong>Status:</strong> Activated</li>
+  <li><strong>Transaction Access:</strong> Available 24 hours after activation</li>
+</ul>
+
+<h2>What You Can Do Next:</h2>
+<ol style="line-height: 1.6;">
+  <li>Log in to your OneDosh account</li>
+  <li>Fund your account using your local currency</li>
+  <li>Send, receive, and swap stablecoins across supported countries (after 24 hours)</li>
+  <li>Access your transaction history and manage your account settings</li>
+</ol>
+
+<h2>Need Help?</h2>
+
+<p>If you did not request this activation or if you have any questions, please contact our support team immediately:</p>
+
+<ul style="line-height: 1.6;">
+  <li><strong>Email:</strong> support@onedosh.com</li>
+  <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+  <li><strong>Support Hours:</strong> Monday - Friday, 9 AM - 6 PM EST</li>
+</ul>
+
+<p>Thank you for being a valued OneDosh user. We're here to help with any questions you may have.</p>
+
+<p>Best regards,<br>
+  The OneDosh Security Team</p>
+
+<div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; font-size: 12px; color: #6c757d;">
+  <p>This is an automated email. Please do not reply to this message.</p>
+  <p>If you have concerns about account security, please contact us immediately.</p>
+</div>
+
+@include('layouts/email_footer')

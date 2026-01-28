@@ -1,0 +1,44 @@
+@include('layouts/email_header')
+
+<h1>Security Alert: Login Verification Required</h1>
+
+<p>Hi {{name}},</p>
+
+<p>We detected a login attempt to your OneDosh account that required additional security verification. For your protection, we sent you an SMS verification code.</p>
+
+<div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <h3 style="margin-top: 0; color: #856404;">Security Reasons Detected:</h3>
+  <div style="margin: 10px 0; padding-left: 20px; color: #856404; white-space: pre-line;">
+    • {{reasons}}
+  </div>
+</div>
+
+<div style="background-color: #f8f9fa; padding: 15px; margin: 20px 0; border-radius: 4px; border: 1px solid #dee2e6;">
+  <h4 style="margin-top: 0; color: #495057;">Login Details:</h4>
+  <p style="margin: 5px 0; color: #6c757d;"><strong>Time:</strong> {{timestamp}}</p>
+  <p style="margin: 5px 0; color: #6c757d;"><strong>IP Address:</strong> {{ipAddress}}</p>
+  <p style="margin: 5px 0; color: #6c757d;"><strong>Location:</strong> {{location}}</p>
+</div>
+
+<p><strong>What we did:</strong> We sent a verification code to your registered phone number to ensure it was really you trying to log in.</p>
+
+<p><strong>Why this helps:</strong> This additional step protects your account from unauthorized access, even if someone has your password.</p>
+
+<div style="background-color: #d1ecf1; border-left: 4px solid #17a2b8; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <h4 style="margin-top: 0; color: #0c5460;">Security Tips:</h4>
+  <ul style="margin: 10px 0; padding-left: 20px; color: #0c5460;">
+    <li>Always log out when using public or shared devices</li>
+    <li>Keep your login credentials secure and don't share them</li>
+    <li>Contact us immediately if you notice any suspicious activity</li>
+    <li>Consider enabling two-factor authentication for extra security</li>
+  </ul>
+</div>
+
+<p><strong>Wasn't you?</strong> If you didn't try to log in, please contact our support team immediately at <a href="mailto:security@onedosh.com" style="color: #3461FF;">security@onedosh.com</a> or change your password right away.</p>
+
+<p>Thank you for helping us keep your account secure!</p>
+
+<p>Best regards,<br>
+The OneDosh Security Team</p>
+
+@include('layouts/email_footer')

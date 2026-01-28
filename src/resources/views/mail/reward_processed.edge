@@ -1,0 +1,53 @@
+@include('layouts/email_header')
+
+<h1>Crypto Rewards Receipt</h1>
+
+<p>Hi {{username}},</p>
+
+<p>This email confirms that a USDC Crypto Reward has been successfully credited to your account. Please review the details below and retain this receipt for your records.</p>
+
+<div style="background-color: #f9fafb; border-radius: 8px; padding: 20px; margin: 24px 0;">
+  <table style="width: 100%; font-size: 14px; color: #4b5563;">
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Order Number</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">{{orderNumber}}</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Asset Rewarded</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">USDC</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Fiat Value</td>
+      <td style="padding: 8px 0; text-align: right;">USD</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Order Type</td>
+      <td style="padding: 8px 0; text-align: right;">Reward</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Fees</td>
+      <td style="padding: 8px 0; text-align: right;">$0</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Quantity</td>
+      <td style="padding: 8px 0; text-align: right; font-weight: 600;">{{formattedAmount}} USDC</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <td style="padding: 8px 0; font-weight: 500;">Date & time</td>
+      <td style="padding: 8px 0; text-align: right;">{{transactionDate}}</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 0; font-weight: 500;">Account Identifier</td>
+      <td style="padding: 8px 0; text-align: right;">{{accountId}}</td>
+    </tr>
+  </table>
+</div>
+
+@include('layouts/zerohash_legal_terms_rewards')
+
+<p>Thanks for choosing OneDosh!</p>
+
+<p>Best regards,<br>
+The OneDosh Team</p>
+
+@include('layouts/email_footer')

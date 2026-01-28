@@ -1,0 +1,31 @@
+import { JSONSchema } from 'objection';
+
+export const BankBeneficiaryValidationSchema: JSONSchema = {
+  type: 'object',
+  title: 'Bank Beneficiary Validation Schema',
+  required: ['user_id', 'currency', 'alias_name'],
+  properties: {
+    user_id: { type: 'string' },
+    currency: { type: 'string' },
+    alias_name: { type: 'string' },
+    avatar_url: { type: ['string', 'null'] },
+    account_number: { type: ['string', 'null'] },
+    iban: { type: ['string', 'null'] },
+    account_name: { type: ['string', 'null'] },
+    bank_name: { type: ['string', 'null'] },
+    bank_code: { type: ['string', 'null'] },
+    swift_code: { type: ['string', 'null'] },
+    routing_number: { type: ['string', 'null'] },
+    bank_logo: { type: ['string', 'null'] },
+    bank_short_name: { type: ['string', 'null'] },
+    bank_country: { type: ['string', 'null'] },
+    bank_address: { type: ['string', 'null'] },
+    bank_city: { type: ['string', 'null'] },
+    bank_state: { type: ['string', 'null'] },
+    bank_zip: { type: ['string', 'null'] },
+    bank_phone: { type: ['string', 'null'] },
+    bank_email: { type: ['string', 'null'] },
+    bank_website: { type: ['string', 'null'] },
+    bank_ref: { type: ['string', 'null'] },
+  },
+};

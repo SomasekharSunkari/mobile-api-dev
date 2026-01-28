@@ -1,0 +1,42 @@
+@include('layouts/email_header')
+
+<h1>Account Deletion Request Cancelled</h1>
+
+<p>Hi {{username}},</p>
+
+<p>We are writing to let you know that your account deletion request has been cancelled by our support team.</p>
+
+<div style="background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; padding: 15px; margin: 20px 0;">
+  <h3 style="color: #155724; margin-top: 0;">✅ Your Account is Active</h3>
+  <p style="color: #155724; margin-bottom: 0;">
+    You can continue using your OneDosh account with your existing login details. All your data and account settings remain intact.
+  </p>
+</div>
+
+<h2>What This Means:</h2>
+<ul style="line-height: 1.6;">
+  <li>Your account is fully active and accessible</li>
+  <li>Your existing login credentials (email and password) remain unchanged</li>
+  <li>All your data, transaction history, and settings are preserved</li>
+  <li>You can continue to use all OneDosh services</li>
+</ul>
+
+<h2>Need Help?</h2>
+
+<p>If you have any questions or if you still wish to delete your account, please contact our support team:</p>
+
+<ul style="line-height: 1.6;">
+  <li><strong>Email:</strong> support@onedosh.com</li>
+</ul>
+
+<p>Thank you for being a valued OneDosh user. We're glad to have you with us!</p>
+
+<p>Best regards,<br>
+  The OneDosh Team</p>
+
+<div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; font-size: 12px; color: #6c757d;">
+  <p>This is an automated email. Please do not reply to this message.</p>
+  <p>If you did not expect this email, please contact us immediately.</p>
+</div>
+
+@include('layouts/email_footer')

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "assets": [
+      {
+        "include": "../resources/**/*",
+        "outDir": "dist/resources",
+        "watchAssets": true
+      },
+      {
+        "include": "../firebase/**/*",
+        "outDir": "dist/src/services/pushNotification/firebase/secrets",
+        "watchAssets": true
+      }
+    ],
+    "watchAssets": true
+  }
+}

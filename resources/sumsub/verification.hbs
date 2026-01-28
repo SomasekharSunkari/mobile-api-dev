@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sumsub WebSDK Test</title>
+  <script src="https://api.sumsub.com/idensic/static/sns-websdk-builder.js"></script>
+</head>
+
+<body>
+  <button id="kyc-button">Start KYC Verification</button>
+  <div id="sumsub-websdk-container" style="width: 100%; height: 600px; margin-top: 20px"></div>
+
+  <script>
+    // ========================================
+    // PASTE YOUR CREDENTIALS HERE:
+    // ========================================
+    const accessToken = "{{accessToken}}";
+    // ========================================
+
+    let snsWebSdkInstance = null;
+
+    function launchSumSubWebSdk(sumsubToken) {
+      console.log("Launching Sumsub WebSDK...");
+
+      snsWebSdkInstance = snsWebSdk
+        .init(
+          sumsubToken,
+          // Token update callback - called when token expires
+          () => {
+            console.log("Token expired! Generate a new token.");
+            alert("Token expired! Please generate a new access token.");
+            return Promise.reject("Token expired");
+          }
+        )
+        .withConf({
+          lang: "en",
+          onMessage: (type, payload) => {
+            console.log("WebSDK onMessage:", type, payload);
+          },
+        })
+        .build();
+
+      // Launch the SDK in the container
+      snsWebSdkInstance.launch("#sumsub-websdk-container");
+    }
+
+    // Start KYC verification
+    document.getElementById("kyc-button").onclick = function () {
+      if (accessToken === "PASTE_YOUR_ACCESS_TOKEN_HERE") {
+        alert("Please paste your access token in the JavaScript code first!");
+        return;
+      }
+
+      console.log("🚀 Starting KYC verification...");
+
+      // Launch the WebSDK
+      launchSumSubWebSdk(accessToken);
+
+      // Hide the button and show the container
+      document.getElementById("kyc-button").style.display = "none";
+      document.getElementById("sumsub-websdk-container").style.display =
+        "block";
+    };
+  </script>
+</body>
+
+</html>

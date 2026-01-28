@@ -1,0 +1,21 @@
+@include('layouts/email_header')
+
+<p>Hello {{ firstName }},</p>
+
+<p>Good news! — Your bank account ending in <strong>{{ lastFourDigits }}</strong> has been successfully linked to your OneDosh wallet.</p>
+
+<p><strong>Here's what you can do next:</strong></p>
+
+<ul>
+    <li>Instantly add or withdraw funds using this account.</li>
+    <li>Unlink it anytime if you wish to connect another bank.</li>
+</ul>
+
+<p>If you didn't authorize this action, please contact our support team right away at {{ supportEmail }}.</p>
+
+<p>Thanks for trusting OneDosh to power your transfers securely.</p>
+
+<p>Warm regards,<br>
+The OneDosh Team</p>
+
+@include('layouts/email_footer')

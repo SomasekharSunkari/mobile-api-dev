@@ -1,0 +1,59 @@
+@include('layouts/email_header')
+
+<h1>Account Restriction Code</h1>
+
+<p>Hi {{username}},</p>
+
+<p>We have received your request to restrict your OneDosh account. To complete the restriction process, please use the verification code below:</p>
+
+<div style="text-align: center; margin: 30px 0;">
+  <div style="background-color: #f8f9fa; border: 2px solid #007bff; border-radius: 8px; padding: 20px; display: inline-block; font-family: 'Courier New', monospace; font-size: 24px; font-weight: bold; color: #007bff; letter-spacing: 3px;">
+    {{restrictionCode}}
+  </div>
+</div>
+
+<h2>Important Information:</h2>
+
+<ul style="line-height: 1.6;">
+  <li><strong>Email:</strong> {{userEmail}}</li>
+  <li><strong>Code Expires:</strong> {{expiresAt}}</li>
+  <li><strong>What happens next:</strong> Once you confirm with this code, your account will be temporarily restricted</li>
+</ul>
+
+<h2>How to Use This Code:</h2>
+
+<ol style="line-height: 1.6;">
+  <li>Log in to your OneDosh account</li>
+  <li>Navigate to Account Settings → Restrict Account</li>
+  <li>Enter this verification code: <strong>{{restrictionCode}}</strong></li>
+  <li>Confirm your restriction request</li>
+</ol>
+
+<div style="background-color: #d1ecf1; border: 1px solid #bee5eb; border-radius: 4px; padding: 15px; margin: 20px 0;">
+  <h3 style="color: #0c5460; margin-top: 0;">ℹ️ Important Information</h3>
+  <p style="color: #0c5460; margin-bottom: 0;">
+    This is a <strong>temporary restriction</strong> and does not mean your account will be permanently deleted. Your account data, transaction history, and balances will remain intact. You can unrestrict your account at any time.
+  </p>
+</div>
+
+<h2>Need Help?</h2>
+
+<p>If you did not request this restriction or if you have any questions, please contact our support team immediately:</p>
+
+<ul style="line-height: 1.6;">
+  <li><strong>Email:</strong> support@onedosh.com</li>
+</ul>
+
+<p>If you wish to cancel this restriction request, simply ignore this email or contact support.</p>
+
+<p>Thank you for being a valued OneDosh user. We're here to help with any questions you may have.</p>
+
+<p>Best regards,<br>
+  The OneDosh Team</p>
+
+<div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; font-size: 12px; color: #6c757d;">
+  <p>This is an automated email. Please do not reply to this message.</p>
+  <p>If you have concerns about account security, please contact us immediately.</p>
+</div>
+
+@include('layouts/email_footer')

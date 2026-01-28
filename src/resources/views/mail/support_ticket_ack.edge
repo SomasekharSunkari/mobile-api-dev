@@ -1,0 +1,27 @@
+@include('layouts/email_header')
+
+<h1 style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 40px 0 30px 0; line-height: 1.2;">
+  Ticket #{{ticketNumber}} - We've Received Your Request
+</h1>
+
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 20px 0; line-height: 1.5;">
+  Hi {{username}},
+</p>
+
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 20px 0; line-height: 1.6;">
+  Thank you for contacting OneDosh Customer Support.<br>
+  We've received your ticket #{{ticketNumber}}, and our team is currently reviewing your request. You can expect a response within the next 24 hours.<br>
+  If you have any additional details or updates to share, please reply directly to this email
+</p>
+
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 30px 0; line-height: 1.5;">
+  Best regards,<br>
+  The OneDosh Support Team
+</p>
+
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 30px 0; line-height: 1.5;">
+  <a href="mailto:support@onedosh.com" style="color: #3461FF; text-decoration: none;">support@onedosh.com</a>
+</p>
+
+@include('layouts/email_footer')
+

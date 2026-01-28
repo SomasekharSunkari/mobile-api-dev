@@ -1,0 +1,36 @@
+@include('layouts/email_header')
+
+<!-- Main Heading -->
+<h1 style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 40px 0 30px 0; line-height: 1.2;">
+  Funds Received in NGN Wallet
+</h1>
+
+<!-- Greeting -->
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 20px 0; line-height: 1.5;">
+  Hi {{ username }}.
+</p>
+
+<!-- Main Message -->
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 20px 0; line-height: 1.6;">
+  You've just received <strong style="color: #1a1a1a; font-weight: 600;">{{ formattedAmount }}</strong> from {{ sender }}.
+</p>
+
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 20px 0; line-height: 1.6;">
+  The funds have been added to your OneDosh wallet, and your updated balance is now available in your account.
+</p>
+
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 30px 0; line-height: 1.6;">
+  You can view the full transaction details anytime in your OneDosh app.
+</p>
+
+<!-- Warning Message -->
+<p style="font-size: 12px; color: #4a4a4a; margin: 0 0 30px 0; line-height: 1.6;">
+  If you didn't initiate this transaction, please contact our team immediately at <a href="mailto:support@onedosh.com" style="color: #3461FF; text-decoration: none;">support@onedosh.com</a>.
+</p>
+
+<!-- Signature -->
+<p style="font-size: 14px; color: #4a4a4a; margin: 0; line-height: 1.5;">
+  The OneDosh Team
+</p>
+
+@include('layouts/email_footer')

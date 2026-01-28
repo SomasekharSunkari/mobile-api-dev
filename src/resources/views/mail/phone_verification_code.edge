@@ -1,0 +1,47 @@
+@include('layouts/email_header')
+
+<h1>Phone Verification Code</h1>
+
+<p>Hi {{username}},</p>
+
+<p>Please use the verification code below to verify your phone number on OneDosh:</p>
+
+<div style="text-align: center; margin: 30px 0;">
+  <div style="background-color: #f8f9fa; border: 2px solid #17a2b8; border-radius: 8px; padding: 20px; display: inline-block; font-family: 'Courier New', monospace; font-size: 24px; font-weight: bold; color: #17a2b8; letter-spacing: 3px;">
+    {{code}}
+  </div>
+</div>
+
+<h2>Important Information:</h2>
+
+<ul style="line-height: 1.6;">
+  <li><strong>Email:</strong> {{userEmail}}</li>
+  <li><strong>Code Expires:</strong> {{expiresAt}}</li>
+</ul>
+
+<div style="background-color: #d1ecf1; border: 1px solid #bee5eb; border-radius: 4px; padding: 15px; margin: 20px 0;">
+  <h3 style="color: #0c5460; margin-top: 0;">📱 Verify Your Phone</h3>
+  <p style="color: #0c5460; margin-bottom: 0;">
+    Enter this code in the app to complete your phone number verification. This helps us keep your account secure and enables additional features.
+  </p>
+</div>
+
+<h2>Need Help?</h2>
+
+<p>If you have any questions or concerns, please contact our support team:</p>
+
+<ul style="line-height: 1.6;">
+  <li><strong>Email:</strong> support@onedosh.com</li>
+</ul>
+
+<p>Thank you for using OneDosh!</p>
+
+<p>Best regards,<br>
+The OneDosh Team</p>
+
+<div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; font-size: 12px; color: #6c757d;">
+  <p>This is an automated email. Please do not reply to this message.</p>
+</div>
+
+@include('layouts/email_footer')
+

@@ -1,0 +1,29 @@
+@include('layouts/email_header')
+
+#requester {{userEmail}}
+
+<h1>{{subject}}</h1>
+
+<p>Hi Support Team,</p>
+
+<p>A new support ticket has been submitted through the OneDosh platform.</p>
+
+<div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 20px 0;">
+  <h3 style="margin-top: 0; color: #495057;">Ticket Details</h3>
+  
+  <p><strong>Subject:</strong> {{subject}}</p>
+  <p><strong>Description:</strong> {{description}}</p>
+  
+  <div style="margin: 16px 0;">
+    <strong>Content:</strong>
+    <div style="background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 4px; padding: 12px; margin-top: 8px; white-space: pre-wrap; font-family: monospace; font-size: 14px;">{{content}}</div>
+  </div>
+  
+  <p><strong>User Email:</strong> {{userEmail}}</p>
+  <p><strong>Submitted:</strong> {{submittedAt}}</p>
+</div>
+
+<p>Please review this ticket and respond to the user as soon as possible.</p>
+
+<p>Best regards,<br>
+  OneDosh System</p>

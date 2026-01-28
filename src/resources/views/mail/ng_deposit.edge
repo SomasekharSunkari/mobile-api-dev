@@ -1,0 +1,109 @@
+@include('layouts/email_header')
+
+<!-- Success Icon -->
+<div style="margin: 40px 0 30px 0; text-align: left;">
+  <div style="display: inline-block; padding: 15px; border-radius: 50%; background-color: #F4FA7D; text-align: center;">
+    <div style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background-color: #031A36; text-align: center; vertical-align: middle;">
+      <span style="color: #F4FA7D; font-size: 14px; font-weight: bold; display: inline-block; line-height: 30px;">✓</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Heading -->
+<h1 style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 0 0 30px 0; line-height: 1.2;">
+  Funding Successful
+</h1>
+
+<!-- Greeting -->
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 24px 0; line-height: 1.5;">
+  Hi {{ username }},
+</p>
+
+<!-- Main Message -->
+<p style="font-size: 14px; color: #4a4a4a; margin: 0 0 24px 0; line-height: 1.6;">
+  Your wallet has been successfully funded with <strong style="color: #1a1a1a; font-weight: 600;">{{ formattedAmount }}</strong>. The amount is now available in your Naira wallet on OneDosh — you can start transacting right away!
+</p>
+
+<!-- Transaction Details Box -->
+<div style="background-color: #F3F4F6; border-radius: 12px; padding: 24px; margin: 30px 0;">
+  <!-- Transaction Amount -->
+  <div style="display: block; margin-bottom: 16px; overflow: hidden;">
+    <div style="float: left; width: 50%;">
+      <span style="font-size: 12px; color: #6B7280; display: block;">Transaction amount</span>
+    </div>
+    <div style="float: right; width: 50%; text-align: right;">
+      <span style="font-size: 12px; color: #1a1a1a; font-weight: 600; display: block;">{{ formattedAmount }}</span>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  {{-- @if(transactionDate) --}}
+  <!-- Date & Time -->
+  <div style="display: block; margin-bottom: 16px; overflow: hidden;">
+    <div style="float: left; width: 50%;">
+      <span style="font-size: 12px; color: #6B7280; display: block;">Date & time</span>
+    </div>
+    <div style="float: right; width: 50%; text-align: right;">
+      <span style="font-size: 12px; color: #1a1a1a; display: block;">{{ transactionDate }}</span>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  {{-- @endif --}}
+
+  {{-- @if(description) --}}
+  <!-- Description -->
+  <div style="display: block; margin-bottom: 16px; overflow: hidden;">
+    <div style="float: left; width: 50%;">
+      <span style="font-size: 12px; color: #6B7280; display: block;">Description</span>
+    </div>
+    <div style="float: right; width: 50%; text-align: right;">
+      <span style="font-size: 12px; color: #1a1a1a; display: block;">{{ description }}</span>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  {{-- @endif --}}
+
+  <!-- Fees -->
+  <div style="display: block; margin-bottom: 16px; overflow: hidden;">
+    <div style="float: left; width: 50%;">
+      <span style="font-size: 12px; color: #6B7280; display: block;">Fees</span>
+    </div>
+    <div style="float: right; width: 50%; text-align: right;">
+      <span style="font-size: 12px; color: #1a1a1a; display: block;">₦0.00</span>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  {{-- @if(bank) --}}
+  <!-- Bank -->
+  <div style="display: block; margin-bottom: 16px; overflow: hidden;">
+    <div style="float: left; width: 50%;">
+      <span style="font-size: 12px; color: #6B7280; display: block;">Bank</span>
+    </div>
+    <div style="float: right; width: 50%; text-align: right;">
+      <span style="font-size: 12px; color: #1a1a1a; display: block;">{{ bank }}</span>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  {{-- @endif --}}
+
+  {{-- @if(transactionId) --}}
+  <!-- Transaction ID -->
+  <div style="display: block; margin-bottom: 24px; overflow: hidden;">
+    <div style="float: left; width: 50%;">
+      <span style="font-size: 12px; color: #6B7280; display: block;">Transaction ID</span>
+    </div>
+    <div style="float: right; width: 50%; text-align: right;">
+      <span style="font-size: 12px; color: #6B7280; display: block; word-break: break-all;">{{ transactionId }}</span>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  {{-- @endif --}}
+</div>
+
+
+<p style="font-size: 12px; color: #4a4a4a; margin: 24px 0 0 0; line-height: 1.6;">
+  If you did not authorize this activity, please contact us immediately at <a href="mailto:support@onedosh.com">support@onedosh.com</a> or <a href="tel:+2349088765432">+2349088765432</a>.
+</p>
+
+@include('layouts/email_footer')

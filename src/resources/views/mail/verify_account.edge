@@ -1,0 +1,29 @@
+@include('layouts/email_header')
+
+<h1>Verify Your OneDosh Account</h1>
+
+<p>Hi {{name}},</p>
+
+<p>Thank you for joining OneDosh — we’re excited to have you on board!</p>
+
+<p>To complete your registration, please enter the code below in the app:</p>
+
+<p style="margin: 16px 0 8px 0; font-size: 16px;">Your verification code:</p>
+
+<div style="text-align: center;">
+  <div
+    style="background-color: rgb(6, 63, 129); color: #fff; padding: 20px 30px; border-radius: 10px; display: inline-block; font-size: 30px; font-weight: bold; letter-spacing: 5px;">
+    {{code}}
+  </div>
+  <p style="margin-top: 12px; font-size: 14px; color: #6b7280;">This code is valid for 30 minutes.</p>
+
+</div>
+
+<p>If you did not create an account with OneDosh, please ignore this email.</p>
+
+<p>Welcome to secure, seamless cross-border payments.</p>
+
+<p>Best regards,<br>
+  The OneDosh Team</p>
+
+@include('layouts/email_footer')
