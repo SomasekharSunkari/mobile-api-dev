@@ -65,7 +65,7 @@
     "@sinch/sdk-core": "^1.2.0",
     "@solana/web3.js": "^1.98.4",
     "@vinejs/vine": "^3.0.1",
-    "axios": "^1.8.4",
+    "axios": "^1.15.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
     "big.js": "^7.0.1",
