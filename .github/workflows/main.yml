@@ -20,4 +20,6 @@ jobs:
           
       - name: Log Command
         run: echo ${{ secrets.NAME }}
+      - name: Log Variables
+        run: echo ${{ vars.NAME }}
       
