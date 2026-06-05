@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: ctions/checkout@v6.0.3
+        uses: actions/checkout@v6.0.3
       - name: java download
         uses: actions/setup-java@v5.2.0
         env:
