@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build:
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,5 +19,5 @@ jobs:
           java-version: 21
           
       - name: Log Command
-        run: echo "Hai"
+        run: echo ${{ secrets.NAME }}
       
