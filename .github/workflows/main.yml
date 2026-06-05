@@ -1,0 +1,22 @@
+name: TestingOne
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: ctions/checkout@v6.0.3
+      - name: java download
+        uses: actions/setup-java@v5.2.0
+        env:
+           APP_NAME: mobile-api
+        with:
+          distribution: temurin
+          java-version: 21
+          
+      - name: Log Command
+        run: echo "Hai"
+      
